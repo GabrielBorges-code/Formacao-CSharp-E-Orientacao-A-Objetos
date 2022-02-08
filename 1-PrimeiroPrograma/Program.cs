@@ -10,6 +10,8 @@ namespace _1_PrimeiroPrograma
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Meu segundo programa em C# :-)");
+            Console.ReadLine();
         }
     }
 }
