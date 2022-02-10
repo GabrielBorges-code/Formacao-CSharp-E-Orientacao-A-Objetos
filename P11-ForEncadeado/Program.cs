@@ -17,7 +17,7 @@ namespace P11_ForEncadeado
                 for(int j = 0; j < 10; j++)
                 {
                     Console.Write("*");
-                    if(j >= i)
+                    if(j <= i)
                         break;
                     
                 }
