@@ -15,7 +15,7 @@ namespace _2_CriandoVariaveis
 
             string nome = "Gabriel Borges";
 
-            Console.WriteLine("Minha idade é " + idade + "Anos de idade");
+            Console.WriteLine("Minha idade é " + idade + " Anos de idade");
             
             // Não quebra a linha
             Console.Write("Meu nome " + nome + " de Moura\n");
