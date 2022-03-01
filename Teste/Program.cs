@@ -1,5 +1,4 @@
-﻿
-using ByteBank_4;
+﻿using ByteBank_4;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +16,13 @@ namespace Teste
                 Metodo();
 
             }
-            catch (NullReferenceException)
+            catch (Exception erro)
             {
-                Console.WriteLine("Erro de referência");
+                Console.WriteLine(erro.Message);
+                Console.WriteLine(erro.StackTrace);
+                Console.WriteLine("Não é possivel dividir por zero");
             }
-            
+
             Console.ReadLine();
         }
         //Teste com a cadeia de chamada:
@@ -33,27 +34,23 @@ namespace Teste
 
         private static void TestaDivisao(int divisor)
         {
-            try
-            {
-                int resultado = Dividir(10, divisor);
-
-                Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);
-
-            }
-            catch (DivideByZeroException erro)
-            {
-                Console.WriteLine(erro.Message);
-                Console.WriteLine(erro.StackTrace);
-                Console.WriteLine("Não é possivel dividir por zero");
-            }
+            int resultado = Dividir(10, divisor);
+            Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado);      
         }
 
         private static int Dividir(int numero, int divisor)
         {
-            //ContaCorrente conta = null;
-            //Console.WriteLine(conta.Saldo);
+            try
+            {
+                return numero / divisor;
 
-            return numero / divisor;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Exceção com número = " + numero + " e divisor = " + divisor);
+                throw;
+                Console.WriteLine("Esse ´código não é executado");
+            }
         }
     }
 }
