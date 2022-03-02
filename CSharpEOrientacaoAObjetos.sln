@@ -67,7 +67,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestesExercicios", "TestesE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp-Parte-4", "CSharp-Parte-4", "{428DBB94-DF79-4844-B046-448DB552F34D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank_4", "ByteBank_4\ByteBank_4.csproj", "{05CD1B99-E886-414E-8D2D-D267F53E0656}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteBank_2", "ByteBank_4\ByteBank_2.csproj", "{05CD1B99-E886-414E-8D2D-D267F53E0656}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "Teste\Teste.csproj", "{C7D5E7CB-33CD-4228-A9DA-C83397175DB8}"
 EndProject
