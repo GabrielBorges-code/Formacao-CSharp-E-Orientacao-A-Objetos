@@ -49,7 +49,7 @@ namespace Teste
             {
                 Console.WriteLine("Exceção com número = " + numero + " e divisor = " + divisor);
                 throw;
-                Console.WriteLine("Esse ´código não é executado");
+                //Console.WriteLine("Esse ´código não é executado"); // código inacessivel
             }
         }
     }
