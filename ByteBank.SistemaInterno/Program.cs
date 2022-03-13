@@ -1,24 +1,19 @@
 ﻿using ByteBank.Modelos;
-using ByteBank.Modelos.Funcionarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ByteBank.SistemaAgencia
+namespace ByteBank.SistemaInterno
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            ContaCorrente conta1 = new ContaCorrente(963, 1234);
+            ContaCorrente conta = new ContaCorrente(354, 9842);
 
-            FuncionarioAutenticavel funcAut = null;
-
-            
-
-            Console.WriteLine(conta1.Numero);
+            Console.WriteLine(conta.Saldo);
 
             Console.ReadLine();
         }
