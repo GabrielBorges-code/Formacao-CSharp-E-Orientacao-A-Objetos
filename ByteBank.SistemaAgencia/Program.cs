@@ -12,15 +12,41 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            ContaCorrente conta1 = new ContaCorrente(963, 1234);
 
-            FuncionarioAutenticavel funcAut = null;
+            string textoVazio = "";
 
+            ExtratorValorDeArgumentosURL evda = ExtratorValorDeArgumentosURL(textoVazio);
+
+            string url = "pagina?moedaOrigem=real&moedaDestino=dolar";
+            Console.WriteLine(url);
+
+            string urlTeste = url.Substring(7);
+            //Console.WriteLine(urlTeste);
+
+            string [] urlTeste2 = url.Split('?');
             
+            string argumento = "";
 
-            Console.WriteLine(conta1.Numero);
+            foreach (var palavras in urlTeste2)
+            {
+                argumento = palavras;
+            }
+
+            Console.WriteLine(argumento);
+            
+            int indiceInterrocagacao = url.IndexOf("?");
+
+            string argumento2 = url.Substring(indiceInterrocagacao + 1);
+            Console.WriteLine(argumento2);
+
+
 
             Console.ReadLine();
+        }
+
+        private static ExtratorValorDeArgumentosURL ExtratorValorDeArgumentosURL(string textoVazio)
+        {
+            throw new NotImplementedException();
         }
     }
 }
