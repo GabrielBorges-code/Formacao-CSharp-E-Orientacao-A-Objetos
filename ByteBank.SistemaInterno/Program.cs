@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Humanizer;
 
 namespace ByteBank.SistemaInterno
 {
@@ -11,11 +12,18 @@ namespace ByteBank.SistemaInterno
     {
         static void Main(string[] args)
         {
-            ContaCorrente conta = new ContaCorrente(354, 9842);
+            DateTime data = new DateTime(2022,02,22);
+            DateTime hoje = DateTime.Now;
 
-            Console.WriteLine(conta.Saldo);
+            TimeSpan diferençaAnos = hoje - data;
+
+            Console.WriteLine("Data anterior " + data + "\nData de hoje " + hoje + "\nDiferença entre as datas " + diferençaAnos.Days);
+
+            Console.WriteLine(TimeSpanHumanizeExtensions.Humanize(diferençaAnos));
 
             Console.ReadLine();
         }
+
+       
     }
 }
