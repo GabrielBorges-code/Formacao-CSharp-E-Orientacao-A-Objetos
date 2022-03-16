@@ -12,41 +12,19 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            string endereco = "R. São Carlos do Pinhal nº746";
+            string enderecoFormatado =
+                endereco
+                    .ToUpper()
+                    .Replace("r.", "Rua")
+                    .Replace(" nº", ", Número ")
+                    .ToUpper();
 
-            string textoVazio = "";
-
-            ExtratorValorDeArgumentosURL evda = ExtratorValorDeArgumentosURL(textoVazio);
-
-            string url = "pagina?moedaOrigem=real&moedaDestino=dolar";
-            Console.WriteLine(url);
-
-            string urlTeste = url.Substring(7);
-            //Console.WriteLine(urlTeste);
-
-            string [] urlTeste2 = url.Split('?');
-            
-            string argumento = "";
-
-            foreach (var palavras in urlTeste2)
-            {
-                argumento = palavras;
-            }
-
-            Console.WriteLine(argumento);
-            
-            int indiceInterrocagacao = url.IndexOf("?");
-
-            string argumento2 = url.Substring(indiceInterrocagacao + 1);
-            Console.WriteLine(argumento2);
-
-
+            Console.WriteLine(enderecoFormatado);
 
             Console.ReadLine();
         }
 
-        private static ExtratorValorDeArgumentosURL ExtratorValorDeArgumentosURL(string textoVazio)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
