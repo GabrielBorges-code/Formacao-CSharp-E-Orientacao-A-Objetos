@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.Modelos;
 using ByteBank.Modelos.Funcionarios;
+using P07ByteBank.SistemaAgencia.Comparadores;
+using P07ByteBank.SistemaAgencia.Extensoes;
+
 //using ByteBank.SistemaAgencia;
 
 namespace P07ByteBank.SistemaAgencia
@@ -13,29 +16,66 @@ namespace P07ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
+            var contas = new List<ContaCorrente>()
+            {
+                new ContaCorrente(654, 9874),
+                null,
+                new ContaCorrente(456, 8521),
+                new ContaCorrente(123, 9632),
+                new ContaCorrente(851, 7892),
+                null,
+                new ContaCorrente(851, 1235),
+            };
 
-            Lista<int> idade = new Lista<int>();
+            //var contasNaoNulas = contas.Where(conta => conta != null);
 
-            idade.Adicionar(7);
-            idade.Adicionar(4);
-            idade.Adicionar(10);
-            idade.AdicionarVarios(11, 15, 3, 8);
+            //contas.Sort(new ComparadorContaCorrentePorAgencia());
+            var contasOrdenadas = contas
+                .Where(conta => conta != null)
+                .OrderBy(conta => conta.Numero );
+
+            foreach (var listaDeContas in contasOrdenadas)
+            {
+                Console.WriteLine($"Nº da Conta: {listaDeContas.Numero}, Nº da Agência {listaDeContas.Agencia}");
+                
+            }            
+            Console.ReadLine();
+        }
+        static void TestaSort()
+        {
+            var idades = new List<int>();
+            var nomes = new List<string>() { "Wellington", "Zitaber", "Gabriel", "Ana" };
+
+            nomes.Sort();
+
+            foreach (var n in nomes)
+            {
+                Console.WriteLine(n);
+            }
+
+
+            idades.Add(7);
+            idades.Add(4);
+            idades.Add(10);
+
+            idades.AdicionarVarios(65, 87, 21, 16);
+
+            idades.Remove(3);
+
+            idades.Sort();
 
             int idadeSoma = 0;
-            for (int i = 0; i < idade.Tamanho; i++)
+            for (int i = 0; i < idades.Count; i++)
             {
-                int idadeAtual = idade[i];
-                idadeSoma += idadeAtual;    
+                int idadeAtual = idades[i];
+                idadeSoma += idadeAtual;
                 Console.WriteLine(idadeAtual);
             }
 
-            int idadeMedia = idadeSoma / idade.Tamanho;
+            int idadeMedia = idadeSoma / idades.Count;
 
             Console.WriteLine($"idade total {idadeSoma}, idade média {idadeMedia}");
-
-            Console.ReadLine();
         }
-
         static void TestaListaDeObject()
         {
             ListaDeObject listaDeIdades = new ListaDeObject();
@@ -108,7 +148,6 @@ namespace P07ByteBank.SistemaAgencia
                 Console.WriteLine($"{i + 1} - Nº da conta: {contas[i].Numero}, Agência da conta: {contas[i].Agencia}");
             }
         }
-
         static void VariosArrays()
         {
             int[] idades = new int[5];
